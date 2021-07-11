@@ -1,0 +1,179 @@
+*{
+    box-sizing: border-box;
+    margin: 0 ;
+
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(344deg, rgb(23 22 22 / 80%) 0%, rgb(199 214 118 / 0.5) 100%), url(img/1081458.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+body {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1, p {
+    text-align: center;
+    color: white;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgb(55 58 52 / 72%);
+    padding: 20px 40px;
+    color: white;
+}
+
+label {
+    display: block;
+    margin-bottom: 25px;
+}
+
+input[type='email'],
+input[type='number'],
+input[type='text'],
+textarea,
+select {
+    display: block;
+    width: 100%;
+    height: 2.5rem;
+    font-family: inherit;
+    border: 0;
+    border-radius: 0.4rem;
+    padding: 0.3rem;
+}
+
+textarea {
+    height: 100px;
+}
+
+button {
+    width: 100%;
+    height: 30px;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+
+}
+
+footer {
+    font-family: inherit;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    background-color: rgb(55 58 52 / 72%);
+    color: white;
+    font-weight: inherit;
+    padding: 20px;
+}
+
+.character,
+.season {
+    background-color: rgb(180, 84, 116) transparent ;
+    position: relative;
+    width: 35%;
+    cursor: pointer;
+    display: block;
+    padding-left: 35px;
+    margin-top: 10px ;
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+
+/* Hide the browser's default radio button & checkbox*/
+ .character input,
+ .season input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+ /* On mouse-over, add a grey background color & checkbox */
+ .character:hover input ~  .checkmark,
+ .season:hover input ~  .checkmark {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background & checkbox */
+ .character input:checked ~  .checkmark,
+ .season input:checked ~  .checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) & checkbox*/
+.checkmark:after,
+.season:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked & checkbox*/
+.character input:checked ~  .checkmark:after,
+.season input:checked ~  .checkmark:after {
+    display: block;
+}
+
+/* Create a custom radio button */
+
+.character .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+  /* Style the indicator (dot/circle) */
+.character .checkmark:after {
+    top: 9px;
+   left: 9px;
+   width: 8px;
+   height: 8px;
+   border-radius: 50%;
+   background: white;
+}
+  
+
+  /* Create a custom checkbox */
+
+  .season .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border-radius: 5px;
+    background-color: #eee;
+  }
+  
+  /* Style the checkmark/indicator */
+  .season .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
